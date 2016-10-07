@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="Natalia_Markova (generated)" id="1475841127903-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex indexName="ROLES_PK" tableName="ROLES" unique="true">
+            <column name="ROLE_ID"/>
+        </createIndex>
+        <addPrimaryKey columnNames="ROLE_ID" constraintName="ROLES_PK" forIndexName="ROLES_PK" tableName="ROLES"/>
+    </changeSet>
+    <changeSet author="Natalia_Markova (generated)" id="1475841127903-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex indexName="USERS_PK" tableName="USERS" unique="true">
+            <column name="USER_ID"/>
+        </createIndex>
+        <addPrimaryKey columnNames="USER_ID" constraintName="USERS_PK" forIndexName="USERS_PK" tableName="USERS"/>
+    </changeSet>
+    <changeSet author="Natalia_Markova (generated)" id="1475841127903-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="ROLE_ID" baseTableName="USERS" constraintName="USERS_FK1" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ROLE_ID" referencedTableName="ROLES"/>
+    </changeSet>
+</databaseChangeLog>
